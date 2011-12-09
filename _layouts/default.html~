@@ -51,9 +51,9 @@
                 <div class="about">
                     <h3><a href="/about/">About Me</a></h3>
                     
-                    <a href="/about/"><img src="/images/me_small.png" alt="ME" /></a>
+                    <a href="/about/"><img src="/images/profile.png" alt="Jacob" /></a>
                     <div>
-                        This is yet a short description of myself. Try to keep it short. <a href="/about/">Read more</a>
+                        I want to help your organization organize... <a href="/about/">Read more</a>
                     </div>
                 </div>
             </div>

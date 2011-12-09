@@ -40,15 +40,15 @@
 <p>Here are the steps that worked for me to set up a test environment for Managing News on AWS EC2</p>
 
 <ol>
-<li><p>Setup an AWS account. (there sales pitch, even though its next to free tot try)</p>
+<li><p>Set up an AWS account. <a href="http://aws.amazon.com/ec2/">their sales pitch, even though its next to free tot try</a></p>
 
 <ul>
 <li>Sign in and click the EC2 tab in the AWS console</li>
 <li>Click "AMIs" in the left toolbar</li>
 <li>Select "Amazon Images" from the drop down and search for Drupal. (I chose the 64bit Drupal 7.X version)</li>
-<li>Setup the machine to your liking; I use all of the default and the quickstart firewall / port setting.</li>
+<li>Set up the machine to your liking; I use all of the default and the quickstart firewall / port setting.</li>
 <li>Be sure to save your *.pem key in a safe place. Linux machines default to ~/.ssh</li>
-<li>Start it up (this should happen as the last step in AWS' step-wise guide)</li>
+<li>Start it up (this should happen as the last step in AWS' step-wise guide.</li>
 </ul>
 </li>
 <li><p>Login to your new machine</p>
@@ -60,7 +60,7 @@
 <li>Test out the default Drupal installation already on the machine by going to its public url (find this in the instance information or right-click connect)</li>
 </ul>
 </li>
-<li><p>Setup your new Managing News Profile</p>
+<li><p>Set up your new Managing News Profile</p>
 
 <ul>
 <li>The default installation of Drupal is at /var/www/html check it out and troubleshoot if you couldn't connect to the public url. Try
@@ -83,7 +83,7 @@ mkdir managing_news
 cd ~/managing_news
 curl -C - -O http://www.managingnews.com/files/managingnews-1.2.zip
 </code></pre></li>
-<li>Install Managing news, or following these <a href="http://drupal.org/documentation/install/developers">directions</a> from drupal.org
+<li>Install Managing news, or following these <a href="http://drupal.org/documentation/install/developers">directions</a> from <a href="http://www.drupal.org">drupal.org</a>
 <pre><code>
 !bash
 unzip managingnews-1.2.zip
@@ -105,7 +105,7 @@ sudo cp default.settings.php settings.php
 <li>Set up MySql server
 
 <ul>
-<li>unfortunately, the mysql server seems to be a bust on the AMI. Let's reinstall it with help from this [tutorial](http://getablogger.blogspot.com/2009/05/how-to-install-mysql-in-centos-53-fro...
+<li>unfortunately, the mysql server seems to be a bust on the AMI. Let's reinstall it with help from this <a href="http://getablogger.blogspot.com/2009/05/how-to-install-mysql-in-centos-53-from.html">tutorial</a>
 <pre><code>  <br/>
 !bash
 sudo yum remove mysql-server
@@ -184,7 +184,7 @@ sudo yum install php-mysql
                 <div class="about">
                     <h3><a href="/about/">About Me</a></h3>
                     
-                    <a href="/about/"><img src="/images/me_small.png" alt="ME" /></a>
+                    <a href="/about/"><img src="/images/profile.png" alt="Jacob" /></a>
                     <div>
                         I want to help your organization organize... <a href="/about/">Read more</a>
                     </div>

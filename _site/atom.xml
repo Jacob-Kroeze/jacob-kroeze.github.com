@@ -4,7 +4,7 @@
  <title>BLOG_NAME</title>
  <link href="YOUR_URL/atom.xml" rel="self"/>
  <link href="YOUR_URL"/>
- <updated>2011-12-08T16:06:56-08:00</updated>
+ <updated>2011-12-09T13:43:45-08:00</updated>
  <id>BLOG_URL</id>
  <author>
    <name>BLOG_NAME</name>
@@ -21,15 +21,15 @@
 &lt;p&gt;Here are the steps that worked for me to set up a test environment for Managing News on AWS EC2&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Setup an AWS account. (there sales pitch, even though its next to free tot try)&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Set up an AWS account. &lt;a href=&quot;http://aws.amazon.com/ec2/&quot;&gt;their sales pitch, even though its next to free tot try&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Sign in and click the EC2 tab in the AWS console&lt;/li&gt;
 &lt;li&gt;Click &quot;AMIs&quot; in the left toolbar&lt;/li&gt;
 &lt;li&gt;Select &quot;Amazon Images&quot; from the drop down and search for Drupal. (I chose the 64bit Drupal 7.X version)&lt;/li&gt;
-&lt;li&gt;Setup the machine to your liking; I use all of the default and the quickstart firewall / port setting.&lt;/li&gt;
+&lt;li&gt;Set up the machine to your liking; I use all of the default and the quickstart firewall / port setting.&lt;/li&gt;
 &lt;li&gt;Be sure to save your *.pem key in a safe place. Linux machines default to ~/.ssh&lt;/li&gt;
-&lt;li&gt;Start it up (this should happen as the last step in AWS' step-wise guide)&lt;/li&gt;
+&lt;li&gt;Start it up (this should happen as the last step in AWS' step-wise guide.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Login to your new machine&lt;/p&gt;
@@ -41,7 +41,7 @@
 &lt;li&gt;Test out the default Drupal installation already on the machine by going to its public url (find this in the instance information or right-click connect)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Setup your new Managing News Profile&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Set up your new Managing News Profile&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;The default installation of Drupal is at /var/www/html check it out and troubleshoot if you couldn't connect to the public url. Try
@@ -64,7 +64,7 @@ mkdir managing_news
 cd ~/managing_news
 curl -C - -O http://www.managingnews.com/files/managingnews-1.2.zip
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;Install Managing news, or following these &lt;a href=&quot;http://drupal.org/documentation/install/developers&quot;&gt;directions&lt;/a&gt; from drupal.org
+&lt;li&gt;Install Managing news, or following these &lt;a href=&quot;http://drupal.org/documentation/install/developers&quot;&gt;directions&lt;/a&gt; from &lt;a href=&quot;http://www.drupal.org&quot;&gt;drupal.org&lt;/a&gt;
 &lt;pre&gt;&lt;code&gt;
 !bash
 unzip managingnews-1.2.zip
@@ -86,7 +86,7 @@ sudo cp default.settings.php settings.php
 &lt;li&gt;Set up MySql server
 
 &lt;ul&gt;
-&lt;li&gt;unfortunately, the mysql server seems to be a bust on the AMI. Let's reinstall it with help from this [tutorial](http://getablogger.blogspot.com/2009/05/how-to-install-mysql-in-centos-53-fro...
+&lt;li&gt;unfortunately, the mysql server seems to be a bust on the AMI. Let's reinstall it with help from this &lt;a href=&quot;http://getablogger.blogspot.com/2009/05/how-to-install-mysql-in-centos-53-from.html&quot;&gt;tutorial&lt;/a&gt;
 &lt;pre&gt;&lt;code&gt;  &lt;br/&gt;
 !bash
 sudo yum remove mysql-server
