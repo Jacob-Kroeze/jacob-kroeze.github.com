@@ -7,14 +7,14 @@ Managing News is a clever implementation of Drupal. Amazon Web Services (AWS) is
 
 Here are the steps that worked for me to set up a test environment for Managing News on AWS EC2
 
-1. Setup an AWS account. (there sales pitch, even though its next to free tot try)
+1. Set up an AWS account. [their sales pitch, even though its next to free tot try](http://aws.amazon.com/ec2/)
    
     * Sign in and click the EC2 tab in the AWS console
     * Click "AMIs" in the left toolbar
     * Select "Amazon Images" from the drop down and search for Drupal. (I chose the 64bit Drupal 7.X version)
-    * Setup the machine to your liking; I use all of the default and the quickstart firewall / port setting.
+    * Set up the machine to your liking; I use all of the default and the quickstart firewall / port setting.
     * Be sure to save your *.pem key in a safe place. Linux machines default to ~/.ssh
-    * Start it up (this should happen as the last step in AWS' step-wise guide)
+    * Start it up (this should happen as the last step in AWS' step-wise guide.
 
 2. Login to your new machine
    
@@ -23,7 +23,7 @@ Here are the steps that worked for me to set up a test environment for Managing 
     * Connect! and follow the directions provided by AWS.
     * Test out the default Drupal installation already on the machine by going to its public url (find this in the instance information or right-click connect)
 
-3. Setup your new Managing News Profile
+3. Set up your new Managing News Profile
   
     * The default installation of Drupal is at /var/www/html check it out and troubleshoot if you couldn't connect to the public url. Try
     <pre><code>	
@@ -45,7 +45,7 @@ Here are the steps that worked for me to set up a test environment for Managing 
     cd ~/managing_news
     curl -C - -O http://www.managingnews.com/files/managingnews-1.2.zip
     </code></pre>
-    * Install Managing news, or following these [directions](http://drupal.org/documentation/install/developers) from drupal.org
+    * Install Managing news, or following these [directions](http://drupal.org/documentation/install/developers) from [drupal.org](http://www.drupal.org)
     <pre><code>
     !bash
     unzip managingnews-1.2.zip
@@ -61,7 +61,7 @@ Here are the steps that worked for me to set up a test environment for Managing 
     sudo cp default.settings.php settings.php
     </code></pre>
     * Set up MySql server
-        * unfortunately, the mysql server seems to be a bust on the AMI. Let's reinstall it with help from this [tutorial](http://getablogger.blogspot.com/2009/05/how-to-install-mysql-in-centos-53-fro...
+        * unfortunately, the mysql server seems to be a bust on the AMI. Let's reinstall it with help from this [tutorial](http://getablogger.blogspot.com/2009/05/how-to-install-mysql-in-centos-53-from.html)
     <pre><code>    
     !bash
     sudo yum remove mysql-server
