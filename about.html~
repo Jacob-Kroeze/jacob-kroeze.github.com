@@ -19,7 +19,19 @@ title: About Jacob Kroeze
 <h3>My Projects</h3>
 
 <div class="projects_container">
-    <table class="projects">
+	<table class="projects">
+        <tr>
+            <td class="img">
+                <a href="emails/resume.html"><img src="/images/project.png" /></a>
+            </td>
+        
+            <td class="desc">
+                <div class="bubble">
+                    <div class="tip"></div>
+                    <strong><a href="emails/resume.html">Resume</a></strong> &mdash; Online, email-compatible Resume and writing sample
+                </div>
+            </td>
+        </tr>
         <tr>
             <td class="img">
                 <a href="project_url"><img src="/images/project.png" /></a>
