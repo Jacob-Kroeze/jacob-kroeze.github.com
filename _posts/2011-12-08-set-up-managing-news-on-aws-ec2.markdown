@@ -1,13 +1,13 @@
 --- 
 layout: post
-title: Setting up Managing News' Drupal Profile on Amazon EC2
+title: Setting Up Managing News on Amazon EC2
 ---
 
 Managing News is a clever implementation of Drupal. Amazon Web Services (AWS) is a clever hosting platform.
 
 Here are the steps that worked for me to set up a test environment for Managing News on AWS EC2
 
-1. Set up an AWS account. [their sales pitch, even though its next to free tot try](http://aws.amazon.com/ec2/)
+1. Set up an AWS account. [their sales pitch, even though its next to free to try](http://aws.amazon.com/ec2/)
    
     * Sign in and click the EC2 tab in the AWS console
     * Click "AMIs" in the left toolbar
