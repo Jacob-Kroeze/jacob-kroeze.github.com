@@ -13,7 +13,8 @@ body {
   padding: 25px;
   background: #a8ddb5;
   margin-bottom: 45px;
-  color: #f7fcf0; }
+  color: #f7fcf0;
+  box-shadow: 10px 10px 5px #888888; }
   #header .inner {
     text-align: left;
     width: 725px;
@@ -28,7 +29,7 @@ body {
       font-size: 23px;
       font-weight: 300; }
       #header ul li a {
-        color: #e0f3db;
+        color: #f7fcf0;
         text-decoration: none; }
         #header ul li a:hover {
           text-decoration: underline; }
@@ -47,7 +48,8 @@ body {
 #content .inner {
   text-align: left;
   width: 725px;
-  margin: auto; }
+  margin: auto;
+  box-shadow: 5px -2px 10px #888888; }
 
 .post {
   margin-bottom: 55px; }
@@ -78,7 +80,8 @@ body {
   font-family: 'Lato';
   background: #a8ddb5;
   padding: 25px;
-  color: #0868AC; }
+  color: #0868AC;
+  box-shadow: 10px -10px 5px #888888; }
   #footer .inner {
     text-align: left;
     width: 725px;
