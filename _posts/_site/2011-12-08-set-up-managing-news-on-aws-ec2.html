@@ -4,7 +4,7 @@
 
 <ol>
 <li>
-<p>Setup an AWS account. (there sales pitch, even though its next to free tot try)</p>
+<p>Set up an AWS account. <a href='http://aws.amazon.com/ec2/'>their sales pitch, even though its next to free to try</a></p>
 
 <ul>
 <li>Sign in and click the EC2 tab in the AWS console</li>
@@ -13,11 +13,11 @@
 
 <li>Select &#8220;Amazon Images&#8221; from the drop down and search for Drupal. (I chose the 64bit Drupal 7.X version)</li>
 
-<li>Setup the machine to your liking; I use all of the default and the quickstart firewall / port setting.</li>
+<li>Set up the machine to your liking; I use all of the default and the quickstart firewall / port setting.</li>
 
 <li>Be sure to save your <em>.pem key in a safe place. Linux machines default to ~/.ssh</em></li>
 
-<li>Start it up (this should happen as the last step in AWS&#8217; step-wise guide)</li>
+<li>Start it up (this should happen as the last step in AWS&#8217; step-wise guide.</li>
 </ul>
 </li>
 
@@ -36,85 +36,93 @@
 </li>
 
 <li>
-<p>Setup your new Managing News Profile</p>
-
-<ul>
-<li>The default installation of Drupal is at /var/www/html check it out and troubleshoot if you couldn&#8217;t connect to the public url. Try</li>
-</ul>
-
-<p>#!bash sudo su /etc/init.d/httpd start</p>
-
-<ul>
-<li>Once you&#8217;ve tested that drupal is up and running, move the installation out of the way.</li>
-</ul>
-
-<p>#!bash sudo su mkdir /var/www/drupal7 mv /var/www/html/* /var/www/drupal7</p>
-
-<ul>
-<li>Download Managing News</li>
-</ul>
-
-<p>#!bash mkdir managing_news cd ~/managing_news curl -C - -O http://www.managingnews.com/files/managingnews-1.2.zip</p>
-
-<ul>
-<li>Install Managing news, or following these <a href='http://drupal.org/documentation/install/developers'>directions</a> from drupal.org</li>
-</ul>
-
-<p>#!bash unzip managingnews-1.2.zip sudo su mv managingnews-1.2/* /var/www/html/</p>
-
-<pre><code> *Go to your machines public url
- * Select &quot;Managing News&quot; as the installation profile.
- * Follow the directions to  create a settings.php file. Here&#39;s mine:</code></pre>
-
-<p>#!bash sudo cd /var/www/html/sites/default sudo cp default.settings.php settings.php</p>
+<p>Set up your new Managing News Profile</p>
 
 <ul>
 <li>
-<p>Set up MySql server <em>unfortunately, the mysql server seems to be a bust on the AMI. Let&#8217;s reinstall it with help from this tutorial</em></p>
-
-<h1 id='bash'>!bash</h1>
-
-<p>sudo yum remove mysql-server sudo yum remove mysql sudo yum install mysql-server sudo yum install mysql-devel sudo yum install php-mysql</p>
-</li>
-</ul>
-
-<p><em>Set up phpMyAdmin, a useful Graphical Interface to help with the SQL illiterate sudo yum install phpmyadmin sudo vim /etc/httpd/conf.d/phpMyAdmin.conf</em></p>
-
-<pre><code># add this line with your own ip address in order to tell apache to let you through to phpMyAdmin
-Allow from your.ip.address.here
-# you should really set up SSL for phpMyAdmin, but that&#39;s another tutorial.</code></pre>
-
-<p><em>Go to http://publicDNS.com/phpmyadmin Add a user and database for Managing news. I called mine &#8220;mn_test&#8221;</em></p>
-
-<ul>
-<li>
-<p>Fix the PHP strict timezone warnings <a href='http://drupal.org/node/325827'>(issue ticket)</a> <a href='http://groups.drupal.org/node/17970#comment-179313'>(solution)</a></p>
-
-<h1 id='bash'>!bash</h1>
-
-<p>sudo vim /var/www/html/sites/default/settings.php</p>
-
-<h1 id='add_the_following_line_under_php_settings'>add the following line under php settings</h1>
-
-<p>ini_set(&#8216;date.timezone&#8217;, date_default_timezone_get());</p>
+<p>The default installation of Drupal is at /var/www/html check it out and troubleshoot if you couldn&#8217;t connect to the public url. Try <pre><code>	
+!bash
+sudo su
+/etc/init.d/httpd start
+</code></pre></p>
 </li>
 
 <li>
-<p>Finally, enable Clean Urls to get rid of the &#8220;q?=&#8221; etc in your urls. <a href='http://drupal.org/node/15365'>Help</a></p>
+<p>Once you&#8217;ve tested that drupal is up and running, move the installation out of the way. <pre><code>	
+!bash
+sudo su
+mkdir /var/www/drupal7
+mv /var/www/html/* /var/www/drupal7
+</code></pre></p>
+</li>
 
-<h1 id='bash'>!bash</h1>
+<li>
+<p>Download Managing News <pre><code> 
+!bash
+mkdir managing_news
+cd ~/managing_news
+curl -C - -O http://www.managingnews.com/files/managingnews-1.2.zip
+</code></pre></p>
+</li>
 
-<p>sudo vim /etc/httpd/conf/mn.conf</p>
+<li>
+<p>Install Managing news, or following these <a href='http://drupal.org/documentation/install/developers'>directions</a> from <a href='http://www.drupal.org'>drupal.org</a> <pre><code>
+!bash
+unzip managingnews-1.2.zip
+sudo su
+mv managingnews-1.2/* /var/www/html/
+</code></pre> * Go to your machines public url * Select &#8220;Managing News&#8221; as the installation profile. * Follow the directions to create a settings.php file. Here&#8217;s mine: <pre><code>
+!bash
+sudo cd /var/www/html/sites/default
+sudo cp default.settings.php settings.php
+</code></pre></p>
+</li>
 
-<h1 id='paste_this'>paste this</h1>
-<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+<li>
+<p>Set up MySql server * unfortunately, the mysql server seems to be a bust on the AMI. Let&#8217;s reinstall it with help from this <a href='http://getablogger.blogspot.com/2009/05/how-to-install-mysql-in-centos-53-from.html'>tutorial</a> <pre><code>    
+!bash
+sudo yum remove mysql-server
+sudo yum remove mysql
+sudo yum install mysql-server
+sudo yum install mysql-devel
+sudo yum install php-mysql
+</code></pre></p>
+</li>
+
+<li>
+<p>Set up phpMyAdmin, a useful Graphical Interface to help with the SQL illiterate <pre><code>
+  sudo yum install phpmyadmin
+  sudo vim /etc/httpd/conf.d/phpMyAdmin.conf
+  #add this line with your own ip address in order to tell apache to let you through to phpMyAdmin
+  Allow from your.ip.address.here
+  # you should really set up SSL for phpMyAdmin, but that's another tutorial.
+</code></pre> * Go to http://publicDNS.com/phpmyadmin. Add a user and database for Managing news. I called mine &#8220;mn_test&#8221;</p>
+</li>
+
+<li>
+<p>Fix the PHP strict timezone warnings <a href='http://drupal.org/node/325827'>(issue ticket)</a> <a href='http://groups.drupal.org/node/17970#comment-179313'>(solution)</a> <pre><code>      
+   #!bash
+   sudo vim /var/www/html/sites/default/settings.php
+   #add the following line under php settings
+   ini_set('date.timezone', date_default_timezone_get());
+</code></pre></p>
+</li>
+
+<li>
+<p>Finally, enable Clean Urls to get rid of the &#8220;q?=&#8221; etc in your urls. <a href='http://drupal.org/node/15365'>Help</a> <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;pre&gt;&lt;code&gt;     
+  #!bash
+  sudo vim /etc/httpd/conf/mn.conf
+  #paste this
 &lt;Directory /var/www/html&gt;
    RewriteEngine on
    RewriteBase /
    RewriteCond %{REQUEST_FILENAME} !-f
    RewriteCond %{REQUEST_FILENAME} !-d
    RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
-&lt;/Directory&gt;</pre></li>
+&lt;/Directory&gt;
+&lt;/code&gt;&lt;/pre&gt;</pre></p>
+</li>
 </ul>
 </li>
 </ol>
