@@ -31,5 +31,6 @@ Since IO is my biggest performance constraint, I've tried to push the work down 
 * Transform: jq
 * Store: linux pipe
 
-Here we go!
+I'm curious how many women are in computer science, software development, and related fields in each country now and over the past 10 years?
+
 
