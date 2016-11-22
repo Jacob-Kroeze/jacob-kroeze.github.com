@@ -2,6 +2,7 @@
 published: false
 title: Jq Data Processing Pipeline
 layout: post
+tags: [jq, linux]
 ---
 Often, when I read about _data processing_, data _pipelines_, _business intelligence_, and _big data_ I think many problems can be solved simply.
 
@@ -31,6 +32,9 @@ Since IO is my biggest performance constraint, I've tried to push the work down 
 * Transform: jq
 * Store: linux pipe
 
-I'm curious how many women are in computer science, software development, and related fields in each country now and over the past 10 years?
+I'm curious about graduates in computer science, software development, and related fields in each country now and over the past 10 years?
 
+https://stats.oecd.org seems reliable.
+
+http://stats.oecd.org/sdmx-json/data/RGRADSTY/AUS+AUT+BEL+CAN+CZE+DNK+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ITA+JPN+KOR+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+ESP+SWE+CHE+TUR+GBR+USA.905160.900000.900000.900000.900000.90/all?startTime=1998&endTime=2012
 
