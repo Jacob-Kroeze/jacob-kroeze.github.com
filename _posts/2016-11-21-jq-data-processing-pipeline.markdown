@@ -36,5 +36,18 @@ I'm curious about graduates in computer science, software development, and relat
 
 https://stats.oecd.org seems reliable.
 
-Here's a useful (oecd api) [http://stats.oecd.org/sdmx-json/data/RGRADSTY/AUS+AUT+BEL+CAN+CZE+DNK+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ITA+JPN+KOR+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+ESP+SWE+CHE+TUR+GBR+USA.905160.900000.900000.900000.900000.90/all?startTime=1998&endTime=2012]
+Here's a useful (OECD api) [http://stats.oecd.org/sdmx-json/data/RGRADSTY/AUS+AUT+BEL+CAN+CZE+DNK+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ITA+JPN+KOR+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+ESP+SWE+CHE+TUR+GBR+USA.905160.900000.900000.900000.900000.90/all?startTime=1998&endTime=2012]
 
+use curl to get a working file:
+```$ curl "the link" > stats.json```
+
+At this point, I step back and consider how hard it is to understand the data set. I'll to read it more easily with jq.
+
+Install it on MacOsX
+
+```$ brew install jq ```
+
+What is the formatting:
+SDMX-json
+
+I want to end up with a table in csv format that can be copied into postgres or Redshift (AWS) using a binary/streaming protocol ```COPY graduates from '/tmp/graduates.csv' with (format csv)```
